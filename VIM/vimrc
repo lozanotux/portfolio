@@ -1,0 +1,15 @@
+" Numero de Lineas
+set number
+
+" Color de Sintaxis
+syntax on
+
+" Correccion de tabs
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set softtabstop=4
+set smarttab
+
+" Resaltar Ocurrencias
+set hlsearch
