@@ -1,6 +1,6 @@
-# SQL Snnipets
+# SQL Snippets
 
-## Log of useful snnipets
+## Log of useful snippets
 
 ### DataBases:
 

@@ -1,4 +1,4 @@
-# Oracle Snnipets Codes
+# Oracle Snippets Codes
 
 ### List of available projects:
 
