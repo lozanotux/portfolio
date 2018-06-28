@@ -14,5 +14,10 @@ Repositorio que almacena cosas personales (configuraciones, clases Java de casos
 4. SQL
    1. Oracle
       1. StoreProcedureTemplate
-5. Linux
-6. Wallpapers
+5. HTML + CSS
+   1. Brackets IDE
+      1. Plugins
+         1. Brackets Working File Tabs: https://github.com/demonmhon/brackets-working-file-tabs
+         2. Brackets Icons: https://github.com/ivogabe/Brackets-Icons
+6. Linux
+7. Wallpapers
