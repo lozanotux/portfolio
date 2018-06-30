@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>FUAL</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+
+  </head>
+
+  <body>
+  <!-- Image and text -->
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        Estado Academico
+    </a>
+      
+    <a class="btn btn-primary" style="color: white;" type="submit" href="/search?year={{ year }}&subject={{ subject }}" >VOLVER</a>
+  </nav>
+  <br>
+  <div class="container">
+    <div class="row">
+        <div class="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+            <h1>{{ reto[0].student_name }}</h1>
+        </div>
+        <div class="col-8" style="margin-left: 12px; margin-top: 24px;">
+            <table class="table table-hover">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Materia</th>
+                  <th scope="col">Nota</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Recursante</th>
+                  <th scope="col">Correlatividad</th>
+                </tr>
+              </thead>
+              <tbody>
+                    {% for r in reto %}
+                        <tr>
+                          <th scope="row">{{ r.subject_name }}</th>
+                          <td>{{ r.notes }}</td>
+                          <td>{{ r.status }}</td>
+                          <td>{{ r.repeating }}</td>
+                          <td>
+                            {% if r.correlative == 0 %}
+                                N/A
+                            {% else %}
+                                {{ r.correlative }}
+                            {% endif %}
+                          </td>
+                        </tr>
+                    {% endfor %}
+              </tbody>
+            </table>
+        </div>
+  </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>

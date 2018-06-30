@@ -11,6 +11,7 @@ Repositorio que almacena cosas personales (configuraciones, clases Java de casos
    1. Module for Create a ZIP File with XML or CSV Files within and get Base64 of ZIP
 3. Python:
    1. App Flask with SQLAlchemy + PostgreSQL persistence
+   2. FUAL: Formulario Unico de Alumnos (Flask, SQLAlchemy, HTML Render, SQLite, etc)
 4. SQL
    1. Oracle
       1. StoreProcedureTemplate

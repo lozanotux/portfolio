@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>FUAL</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+
+  </head>
+
+  <body>
+  <!-- Image and text -->
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        Usted hizo la busqueda por año {{ year }} y materia: {{ subject }}
+    </a>
+  </nav>
+  <br>
+  <div class="container">
+    <div class="row ">
+      <div class="col-12">
+        <h5>Bienvenido a FUAL</h5>
+        <p>bienvenido a FUAL, formulario unico de alumnos, el mismo ha sido conffecionado por el alumno Gabriel Menendez IFTS12 </p>
+
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-12">
+
+
+
+<table class="table table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">DNI</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Nacionalidad</th>
+      <th scope="col">Division</th>
+      <th scope="col">Año Lectivo</th>
+      <th scope="col">Action</th>
+
+    </tr>
+  </thead>
+  <tbody>
+      {% for student in students %}
+    <tr>
+      <th scope="row">{{student.id}}</th>
+      <td>{{student.name}}</td>
+      <td>{{student.surname}}</td>
+      <td>{{student.dni}}</td>
+      <td>{{student.age}}</td>
+      <td>{{student.nationality}}</td>
+      <td>{{student.division}}</td>
+      <td>{{student.lective_year}}</td>
+      <td><a href="/statusAcademico/{{student.name}}?year={{ year }}&subject={{ subject }}">Estado Academico</a></td>
+
+
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+
+
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>
