@@ -26,6 +26,7 @@ Repositorio que almacena cosas personales (configuraciones, clases Java de casos
    5. UploadToHRServer: upload a file to Oracle HR Server
    6. PoCApacheLDAP: query ldap and read ZIP file to create CSV File list (opaque list)
    7. ConsumeRestPoC: simple poc for consume rest service
+   8. FirstJersey: basic hello world jersey, basic structure
 5. Python:
    1. ABMUsuarios: Flask with SQLAlchemy + PostgreSQL persistence
    2. FUAL: Formulario Unico de Alumnos (Flask, SQLAlchemy, HTML Render, SQLite, etc)
