@@ -21,7 +21,7 @@ $ python app.py
    2. Make sure enable pip installation 
 3. Clone the FUAL repo: https://gitlab.com/gmenendez/fual.git
 4. For Windows OS, remove dependency "psycopg2==2.7.4" from requirements.txt
-5. Ejecutar los siguientes comandos:
+5. Run the next commands:
 ```
    $ pip install virtualenv
    $ cd C:/Path/to/FUAL
