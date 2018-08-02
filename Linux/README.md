@@ -32,5 +32,5 @@ sudo -u <user> vi <file>
   
 **Transfer file from one server to another:**
 ```
-scp root@10.0.0.1:/path/to/file.tar.gz
+scp root@10.0.0.1:/path/to/file.tar.gz /path/to/copy
 ```
