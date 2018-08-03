@@ -34,3 +34,10 @@ sudo -u <user> vi <file>
 ```
 scp root@10.0.0.1:/path/to/file.tar.gz /path/to/copy
 ```
+  
+  
+  
+**know what files can be deleted to free up disk space:**
+```
+du -sch * --exclude=home
+```
