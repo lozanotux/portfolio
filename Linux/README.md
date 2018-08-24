@@ -41,3 +41,11 @@ scp root@10.0.0.1:/path/to/file.tar.gz /path/to/copy
 ```
 du -sch * --exclude=home
 ```
+
+
+
+
+**know what files contain certain text inside it:**
+```
+find /in/path/ -type f -exec grep -H 'certain_text' {} \;
+```
