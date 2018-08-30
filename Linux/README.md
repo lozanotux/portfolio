@@ -49,3 +49,19 @@ du -sch * --exclude=home
 ```
 find /in/path/ -type f -exec grep -H 'certain_text' {} \;
 ```
+
+
+
+
+**List and view all files in a folder with full path:**
+```
+ls -R /opt | awk '/:$/&&f{s=$0;f=0} /:$/&&!f{sub(/:$/,"");s=$0;f=1;next} NF&&f{ print s"/"$0 }'
+```
+
+
+
+
+**Find and view files with full path :**
+```
+find /opt -iname "*lib*"
+```
