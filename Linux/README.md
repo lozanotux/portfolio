@@ -61,7 +61,15 @@ ls -R /opt | awk '/:$/&&f{s=$0;f=0} /:$/&&!f{sub(/:$/,"");s=$0;f=1;next} NF&&f{ 
 
 
 
-**Find and view files with full path :**
+**Find and view files with full path:**
 ```
 find /opt -iname "*lib*"
+```
+
+
+
+
+**Find files X old days and run some command:**
+```
+find /path -name '*some_word*' -mtime +15 -exec rm -rf {} \; 2> /dev/null
 ```
