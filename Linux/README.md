@@ -73,3 +73,11 @@ find /opt -iname "*lib*"
 ```
 find /path -name '*some_word*' -mtime +15 -exec rm -rf {} \; 2> /dev/null
 ```
+
+
+
+
+**Know wich ports are used and find one:**
+```
+netstat -puntl | grep ':9503'
+```
