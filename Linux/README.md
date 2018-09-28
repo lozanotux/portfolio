@@ -3,19 +3,19 @@
 ## Common commands
 
 **How to know which JAR has certain class:**
-```Shell
+``` sh
 find . -type f -name '*.jar' -print0 |  xargs -0 -I '{}' sh -c 'jar tf {} | grep ClassName.class &&  echo {}'
 ```
-
-
-
+  |
+  |
+  |
 **Know the __Filesystem__ distribution and usage of disk for each one:**
-```Bash
+``` sh
 df -vh
 ```
-
-
-
+  |
+  |
+  |
 **Know the disk usage of one __Folder__ and its subdirectories:**
 ```sh
 du -h /folder -d 1
