@@ -19,13 +19,13 @@ fi
 # Check subcommand that will run
 case "$1" in
     1|start)
-	    # Test if the start subcommand has a parameter
+        # Test if the start subcommand has a parameter
         if [ `echo "$@" | wc -w` -eq 2 ]
         then
-		    # Search the instance with: USER_TOMCAT, INSTANCE, Exclude greps commands, and get the PID number 
+            # Search the instance with: USER_TOMCAT, INSTANCE, Exclude greps commands, and get the PID number 
             if [ `ps -fea | grep $USER_TOMCAT | grep /${2}/ | grep -v grep | awk '{print $2}' | wc -w` -eq "1" ]
             then
-			    # If the instance is already running, print the next message
+                # If the instance is already running, print the next message
                 echo "Instance ${2} Already started"
             elif [ `ps -fea | grep $USER_TOMCAT | grep /${2}/ | grep -v grep | awk '{print $2}' | wc -w` -eq 0 ]
             then
@@ -44,10 +44,10 @@ case "$1" in
         fi
     ;;
     2|stop)
-	    # Test if the stop subcommand has a parameter
+        # Test if the stop subcommand has a parameter
         if [ `echo "$@" | wc -w` -eq 2 ]
         then
-		    # Search the instance with: USER_TOMCAT, INSTANCE, Exclude greps commands, and get the PID number
+            # Search the instance with: USER_TOMCAT, INSTANCE, Exclude greps commands, and get the PID number
             if [ `ps -fea | grep $USER_TOMCAT | grep /${2}/ | grep -v grep | awk '{print $2}' | wc -w` -eq "1" ]
             then
                 kill -9 `ps -fea | grep $USER_TOMCAT | grep /${2}/ | grep -v grep | awk '{print $2}'`
@@ -61,10 +61,10 @@ case "$1" in
         fi
     ;;
     3|restart)
-	    # Test if the restart subcommand has a parameter
+        # Test if the restart subcommand has a parameter
         if [ `echo "$@" | wc -w` -eq 2 ]
         then
-		    # Search the instance with: USER_TOMCAT, INSTANCE, Exclude greps commands, and get the PID number
+            # Search the instance with: USER_TOMCAT, INSTANCE, Exclude greps commands, and get the PID number
             kill -9 `ps -fea | grep $USER_TOMCAT | grep /${2}/ | grep -v grep | awk '{print $2}'`
             sleep 8
 
@@ -80,10 +80,10 @@ case "$1" in
         fi
     ;;
     4|status)
-	    # Test if the status subcommand has a parameter
+        # Test if the status subcommand has a parameter
         if [ `echo "$@" | wc -w` -eq 2 ]
         then
-		    # Search the instance with: USER_TOMCAT, INSTANCE, Exclude greps commands, and get the PID number
+            # Search the instance with: USER_TOMCAT, INSTANCE, Exclude greps commands, and get the PID number
             if [ `ps -fea | grep $USER_TOMCAT | grep /${2}/ | grep -v grep | awk '{print $2}' | wc -w` -eq "1" ]
             then
                 echo "Instance started."
@@ -103,11 +103,11 @@ case "$1" in
             fi
         elif [ `echo "$@" | wc -w` -eq 1 ]
         then
-		    # Print Header of status list
+            # Print Header of status list
             echo -e "INSTANCES (\e[1;34mUP\e[0m|\e[1;31mDOWN\e[0m)\t|  PID   |   HTTP   |  SHUTDOWN  |   WEBAPPS"
             ls $INSTANCES_PATH | grep -v log | grep -v sample | while read T_INSTANCES
             do
-			    # Make different tabs to print better the instances names
+                # Make different tabs to print better the instances names
                 if [[ `echo "${T_INSTANCES}" | wc -c` -gt 16 ]]
                 then
                     TABS='\t'
@@ -139,11 +139,11 @@ case "$1" in
                 PORT_SHUTDOWN=$(grep "Server port" $INSTANCES_PATH/${T_INSTANCES}/conf/server.xml | grep -v "!--"  | grep -o '[0-9][0-9][0-9][0-9]')
                 WEBDAV=$(ls $INSTANCES_PATH/${T_INSTANCES}/webapps/ | grep -v .war)
 
-				# Put webapps one beside the other
+                # Put webapps one beside the other
                 if [[ `echo ${WEBDAV} | wc -w` -gt 1 ]]; then WEBDAV=`echo ${WEBDAV}`; 
                 fi
 				
-				# Test if the instance is up
+                # Test if the instance is up
                 if [ `ps -fea | grep $USER_TOMCAT | grep ${T_INSTANCES} | grep -v grep | grep -v tomcatctl | awk '{print $2}'| wc -w` -eq "1" ]
                 then
                     echo -e "\e[1;34m${T_INSTANCES}\e[0m${TABS}|  ${PID_APP}${SP}|   ${PORT_HTTP}   |   ${PORT_SHUTDOWN}   |   ${WEBDAV}"
