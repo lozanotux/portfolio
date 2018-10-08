@@ -119,7 +119,7 @@ case "$1" in
                 fi
                 
                 # Search the instance with: USER_TOMCAT, INSTANCE, Exclude greps commands, Exclude tomcatctl.sh command and get the PID number
-                PID_APP=`ps -fea | grep $USER_TOMCAT | grep ${T_INSTANCES} | grep -v grep | grep -v tomcatctl | awk '{print $2}'`
+                PID_APP=`ps -fea | grep $USER_TOMCAT | grep /${T_INSTANCES}/ | grep -v grep | grep -v tomcatctl | awk '{print $2}'`
 
                 # Make different spans to print better the PID of instances
                 if [[ `echo "${PID_APP}" | wc -c` -eq 6 ]]
@@ -144,7 +144,7 @@ case "$1" in
                 fi
 				
                 # Test if the instance is up
-                if [ `ps -fea | grep $USER_TOMCAT | grep ${T_INSTANCES} | grep -v grep | grep -v tomcatctl | awk '{print $2}'| wc -w` -eq "1" ]
+                if [ `ps -fea | grep $USER_TOMCAT | grep /${T_INSTANCES}/ | grep -v grep | grep -v tomcatctl | awk '{print $2}'| wc -w` -eq "1" ]
                 then
                     echo -e "\e[1;34m${T_INSTANCES}\e[0m${TABS}|  ${PID_APP}${SP}|   ${PORT_HTTP}   |   ${PORT_SHUTDOWN}   |   ${WEBDAV}"
                 else
