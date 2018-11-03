@@ -1,6 +1,5 @@
-# OWN THINGS
-Repositorio que almacena cosas personales (configuraciones, clases Java de casos particulares, entre otros lenguajes de programación
- como python, pl/sql, etc).
+# Portfolio
+Repositorio que almacena trabajos e invetigaciones (configuraciones, clases Java de casos particulares, entre otros lenguajes de programación como python, pl/sql, etc).
 
 
 # CONTENIDO:
@@ -37,4 +36,7 @@ Repositorio que almacena cosas personales (configuraciones, clases Java de casos
       1. StoreProcedureTemplate
 
 7. Linux
+   1. Comandos
+   2. Scripts
+   
 8. Wallpapers
