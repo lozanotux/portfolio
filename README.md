@@ -2,7 +2,7 @@
 Repositorio que almacena trabajos e invetigaciones (configuraciones, clases Java de casos particulares, entre otros lenguajes de programación como python, pl/sql, etc).
 
 
-# CONTENIDO:
+## CONTENIDO:
 
 1. VIM Configs:
    1. Standar Enhanced
