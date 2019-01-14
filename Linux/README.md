@@ -83,3 +83,10 @@ netstat -puntl | grep ':9503'
 ``` sh
 find /path -type f -ls | grep 'Jan 10' > /tmp/result_file.log
 ```
+  
+  
+  
+**Give a list of the first depth directories and their sizes, limits the analysis to one file system:**
+``` sh
+du --max-depth=1 -x -h
+```
