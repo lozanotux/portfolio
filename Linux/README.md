@@ -90,3 +90,10 @@ find /path -type f -ls | grep 'Jan 10' > /tmp/result_file.log
 ``` sh
 du --max-depth=1 -x -h
 ```
+  
+  
+  
+**Read a text file and run certain command for each line:**
+``` sh
+cat text_file.txt | while read VARIABLE; do echo "$VARIABLE"; done
+```
