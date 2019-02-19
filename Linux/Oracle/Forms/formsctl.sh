@@ -178,7 +178,7 @@ do
                     FR_PID=`ps -fea | grep $USER | grep "servers/WLS_FORMS" | grep -v grep | awk '{print $2}'`
                     green_color "formsctl~]# Managed $MANAGED_FORMS Started [ PID: $FR_PID ]"
                 else
-                    nohup $DOMAIN_HOME/bin/./stopManagedWebLogic.sh WLS_REPORTS t3://172.23.9.68:7001 > $DOMAIN_HOME/bin/exit_error.out & > /dev/null 2>&1
+                    nohup $DOMAIN_HOME/bin/./stopManagedWebLogic.sh WLS_REPORTS t3://$HOST:$PORT > $DOMAIN_HOME/bin/exit_error.out & > /dev/null 2>&1
                     sleep 30
                     nohup $DOMAIN_HOME/bin/./stopNodeManager.sh > $DOMAIN_HOME/bin/exit_error.out & > /dev/null 2>&1
                     sleep 30
