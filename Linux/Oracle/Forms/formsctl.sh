@@ -151,9 +151,9 @@ do
                 do
                     [[ "${LOGLINE}" == *"RUNNING"* ]] && pkill -P $$ tail
                 done
-                if [ `ps -fea | grep $USER | grep 'servers/WLS_REPORTS' | grep -v grep | awk '{print $2}' | wc -w` -eq "1" ]
+                if [ `ps -fea | grep $USER | grep 'servers/$MANAGED_REPORTS' | grep -v grep | awk '{print $2}' | wc -w` -eq "1" ]
                 then
-                    RP_PID=`ps -fea | grep $USER | grep "servers/WLS_REPORTS" | grep -v grep | awk '{print $2}'`
+                    RP_PID=`ps -fea | grep $USER | grep "servers/$MANAGED_REPORTS" | grep -v grep | awk '{print $2}'`
                     green_color "formsctl~]# Managed $MANAGED_REPORTS Started [ PID: $RP_PID ]"
                 else
                     nohup $DOMAIN_HOME/bin/./stopNodeManager.sh > $DOMAIN_HOME/bin/exit_error.out & > /dev/null 2>&1
@@ -173,9 +173,9 @@ do
                 do
                     [[ "${LOGLINE}" == *"RUNNING"* ]] && pkill -P $$ tail
                 done
-                if [ `ps -fea | grep $USER | grep 'servers/WLS_FORMS' | grep -v grep | awk '{print $2}' | wc -w` -eq "1" ]
+                if [ `ps -fea | grep $USER | grep 'servers/$MANAGED_FORMS' | grep -v grep | awk '{print $2}' | wc -w` -eq "1" ]
                 then
-                    FR_PID=`ps -fea | grep $USER | grep "servers/WLS_FORMS" | grep -v grep | awk '{print $2}'`
+                    FR_PID=`ps -fea | grep $USER | grep "servers/$MANAGED_FORMS" | grep -v grep | awk '{print $2}'`
                     green_color "formsctl~]# Managed $MANAGED_FORMS Started [ PID: $FR_PID ]"
                 else
                     nohup $DOMAIN_HOME/bin/./stopManagedWebLogic.sh $MANAGED_REPORTS t3://$HOST:$PORT > $DOMAIN_HOME/bin/exit_error.out & > /dev/null 2>&1
