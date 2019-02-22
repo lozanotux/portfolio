@@ -97,3 +97,10 @@ du --max-depth=1 -x -h
 ``` sh
 cat text_file.txt | while read VARIABLE; do echo "$VARIABLE"; done
 ```
+  
+  
+  
+**Batch process that read each file and remove return carriage '\r':**
+``` sh
+for i in *;do tr -d '\r' < $i > out/$i; chmod +x out/$i;done
+```
