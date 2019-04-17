@@ -17,6 +17,6 @@ pylint==1.9.2
 python-dateutil==2.7.3
 python-editor==1.0.3
 six==1.11.0
-SQLAlchemy==1.2.8
+SQLAlchemy>=1.3.0
 Werkzeug==0.14.1
 wrapt==1.10.11
