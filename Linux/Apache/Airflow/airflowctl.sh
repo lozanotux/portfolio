@@ -65,7 +65,7 @@ case "$1" in
     3|restart)
         stop_airflow
         sleep 2
-        PIDCORE=$(ps -ef | grep "local/bin/airflow" | grep -v grep | awk '{print $2}')
+        PIDCORE=$(ps -ef | grep "bin/airflow" | grep -v grep | awk '{print $2}')
         start_airflow
         ;;
     *)
