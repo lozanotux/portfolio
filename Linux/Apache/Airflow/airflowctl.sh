@@ -68,12 +68,23 @@ case "$1" in
         PIDCORE=$(ps -ef | grep "bin/airflow" | grep -v grep | awk '{print $2}')
         start_airflow
         ;;
+    4|status)
+        INSTANCE_RUNNING_PID=""
+        INSTANCE_RUNNING_PID=$(ps -ef | grep "bin/airflow" | grep -v grep | awk '{print $2}')
+        if [ $INSTANCE_RUNNING_PID= ]
+        then
+            ok "Apache Airflow is running!... PID: $INSTANCE_RUNNING_PID"
+        else
+            warn "Apache Airflow is not running"
+        fi
+        ;;
     *)
         echo -e "\n\tUsage: airflowctl [command]"
         echo -e "\n\tAvailable commands (You can use name or command number):"
         echo -e "\t\t1 | start     # Start Apache Airflow WebServer"
         echo -e "\t\t2 | stop      # Stops the Apache Airflow processes"
         echo -e "\t\t3 | restart   # Restart Apache Airflow WebServer"
+        echo -e "\t\t4 | status    # Status of Apache Airflow WebServer"
         exit 1
         ;;
 esac
