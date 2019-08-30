@@ -31,12 +31,22 @@ Repositorio que almacena trabajos e invetigaciones (configuraciones, clases Java
 5. Python:
    1. ABMUsuarios: Flask with SQLAlchemy + PostgreSQL persistence
    2. FUAL: Formulario Unico de Alumnos (Flask, SQLAlchemy, HTML Render, SQLite, etc)
+   3. FileUploader: a simple web app to upload files to a server showing progress bar
+   4. FlaskChat: a simple chat app to talk with peoples in different rooms
 6. SQL
    1. Oracle
       1. StoreProcedureTemplate
 
 7. Linux
    1. Comandos
-   2. Scripts
+   2. Oracle
+      1. formsctl.sh: administration script to start and stop Oracle Forms 12c
+      2. formsctl11g.sh: administration script for solaris to start and stop Oracle Forms 11g
+   3. Apache
+      1. Tomcat
+         1. tomcatctl.sh: administration script to start, stop, restart and get status for Apache Tomcat instances
+      2. Airflow
+         1. airflowctl.sh: administration script to start, stop and restart Apache Airflow.
+
    
 8. Wallpapers

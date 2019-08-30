@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flask Chat v1.0</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+        <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            var socket;
+
+            $(document).ready(function() {
+                socket = io.connect('http://' + document.domain + ':' + location.port + '/chat');
+                
+                socket.on('connect', function() {
+                    socket.emit('joined', {});
+                });
+
+                socket.on('status', function(data) {
+                    var divChat = document.getElementById('chat');
+                    divChat.innerHTML += '<span class="info">' + data.msg + '</span>';
+                    $('#chat').scrollTop($('#chat')[0].scrollHeight);
+
+                    var divSidebar = document.getElementById('connectedusers');
+                    
+                    var child = divSidebar.lastElementChild;  
+                    while (child) { 
+                        divSidebar.removeChild(child); 
+                        child = divSidebar.lastElementChild; 
+                    } 
+
+                    var i;
+                    for(i = 0; i < data.users.length; i++) {
+                        var newUser = document.createElement('nobr');
+                        var icon = document.createElement('i');
+                        icon.classList.add("fas");
+                        icon.classList.add("fa-user-circle");
+                        newUser.appendChild(icon);
+                        var dot = document.createElement('dot');
+                        dot.append("•");
+                        newUser.append(dot);
+                        var text = document.createElement('text');
+                        text.append(data.users[i]);
+                        newUser.append(text);
+                        divSidebar.appendChild(newUser);
+                    }
+                });
+
+                socket.on('message', function(data) {
+                    var divChat = document.getElementById('chat');
+                    divChat.innerHTML += '<div class="bubble">' + data.msg + '<div class="bubble-arrow"></div></div>';
+                    $('#chat').scrollTop($('#chat')[0].scrollHeight);
+                });
+
+                $('#text').keypress(function(e) {
+                    var code = e.keyCode || e.which;
+                    if (code == 13) {
+                        text = $('#text').val();
+                        $('#text').val('');
+                        socket.emit('text', {msg: text});
+                    }
+                });
+            });
+
+            function send_message(data) {
+                
+                    var divChat = document.getElementById('chat');
+                    divChat.innerHTML += '<div class="bubble">' + data.msg + '<div class="bubble-arrow"></div></div>';
+                    $('#chat').scrollTop($('#chat')[0].scrollHeight);
+
+            }
+
+            function leave_room() {
+                socket.emit('left', {}, function() {
+                    socket.disconnect();
+
+                    //go back to the login page
+                    window.location.href = "{{ url_for('main.index') }}";
+                });
+            }
+        </script>
+    </head>
+    <body style="background: #dedede;">
+        <nav class="navbar">
+            <nav-title>Room:</nav-title> <h1>{{ room }}</h1>
+
+            <div class="actionbox">
+                <a class="action-item" href="#" onclick="toggleModal()">
+                    <i class='fas fa-info-circle'></i>
+                </a>
+                <a class="action-item" href="#" onclick="leave_room();">
+                    <i class='fas fa-sign-out-alt'></i>
+                </a>
+            </div>
+        </nav>
+
+        <div id="sidebar">
+            <h1>Connected Users</h1>
+            
+            <div id="connectedusers">
+
+            </div>
+        </div>
+        <div id="chat"></div>
+        <div class="sendmsg">
+            <input id="text" size="80" placeholder="Enter your message here">
+
+            <i class="material-icons snedicon" onclick="send_message();">send</i>
+        </div>
+        <div id="modal-area" class="modal">
+            <div class="modal-content">
+                <button class="closeBtn" onclick="toggleModal()">&times;</button>
+                <!-- Content -->
+                <div class="version-logo">
+                    <img src="{{ url_for('static', filename='img/flask_chat.png') }}" alt="Flask Chat Logo">
+                </div>
+                <div class="version-description">
+                    <h1>Flask Chat 1.1.0</h1>
+                    <p>
+                        &copy; 2015 - 2019 Flash Chat Developers<br>
+                        <br>
+                        This program is published under the terms of the GPL license,
+                        it comes with ABSOLUTELY NO WARANTY; for details visit:<br>
+                        <a class="verison-url" href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">
+                            https://www.gnu.org/licenses/gpl-3.0.en.html
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script>
+            var clic = 1;
+            function toggleModal() {
+                if(clic==1){
+                    document.getElementById('modal-area').style.display='block';
+                    clic = clic + 1;
+                } else{
+                    document.getElementById('modal-area').style.display='none';
+                    clic = 1;
+                }
+            }
+        </script>
+    </body>
+</html>

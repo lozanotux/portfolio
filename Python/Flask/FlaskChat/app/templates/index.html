@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flask Chat v1.0</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+        <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var e = document.getElementsByClassName("txtb");
+                var name = document.getElementById("name").value;
+                var room = document.getElementById("room").value;
+                if(name != "") {
+                    var nameNode = document.getElementById("name");
+                    nameNode.classList.add("focus");
+                }
+                if(room != "") {
+                    var roomNode = document.getElementById("room");
+                    roomNode.classList.add("focus");
+                }
+            });
+        </script>
+    </head>
+    <body style="background: #128c7e;">
+        <div class="LoginForm">
+            <h1>Flask Chat Login</h1>
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                <div class="txtb">
+                    {{ form.name.label }} {{ form.name() }}
+                    {% for error in form.name.errors %} 
+                        {{ error }}
+                    {% endfor %}
+                    <span data-placeholder="Nombre de usuario"></span>
+                </div>
+                <div class="txtb">
+                    {{ form.room.label }} {{ form.room() }} 
+                    {% for error in form.room.errors %}
+                        {{ error }}
+                    {% endfor %}
+                    <span data-placeholder="Sala"></span>
+                </div>
+                {{ form.submit() }}
+            </form>
+        </div>
+        <script type="text/javascript">
+            $(".txtb input").on("focus", function() {
+                    $(this).addClass("focus");
+            });
+
+            $(".txtb input").on("blur", function() {
+                if($(this).val() == "")
+                    $(this).removeClass("focus");
+            });
+        </script>
+    </body>
+</html>
