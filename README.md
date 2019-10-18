@@ -33,6 +33,7 @@ Repositorio que almacena trabajos e invetigaciones (configuraciones, clases Java
    2. FUAL: Formulario Unico de Alumnos (Flask, SQLAlchemy, HTML Render, SQLite, etc)
    3. FileUploader: a simple web app to upload files to a server showing progress bar
    4. FlaskChat: a simple chat app to talk with peoples in different rooms
+   5. MVCFlask: basis the flask and flask_login include blueprints
 6. SQL
    1. Oracle
       1. StoreProcedureTemplate

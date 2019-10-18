@@ -1,0 +1,106 @@
+<!--
+    This HTML documment is the base for all the pages in the webapp.
+    The same, can be extended and add other elements on it using the
+    blocks defined below.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MVCFlask - {% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+    <!-- This project use Bootstrap version 4.3 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- Also use Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Francois+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <!-- And JQuery version 3 -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    {% endblock %}
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        {% block menu %}
+        <a class="navbar-brand brand-title" href="/">MVCFlask</a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+            </li>
+            <!-- In this way we can restrict the link if the user is not currently authenticated -->
+            {% if current_user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('index_bp.profile') }}">Profile</a>
+            </li>
+            {% endif %}
+            <!-- The opposite way is for the authenticated user not to see the links of login and signup -->
+            {% if not current_user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('auth_bp.login') }}">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('auth_bp.signup') }}">Sign Up</a>
+            </li>
+            {% endif %}
+            {% if current_user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('auth_bp.logout') }}">Logout</a>
+            </li>
+            {% endif %}
+        </ul>
+        {% endblock %}
+    </nav>
+
+    <div class="container-fluid" style="margin-top:80px">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="font-small blue pt-4">
+        {% block footer %}
+        <!-- Footer Links -->
+        <div class="container-fluid text-center text-md-left">
+            <div class="row page-footer">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <!-- Content -->
+                    <h5 class="text-uppercase">Website Content</h5>
+                    <p>The site map with the most useful links</p>
+                </div>
+                <hr class="clearfix w-100 d-md-none pb-3">
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <!-- Links Group 1 -->
+                    <h5 class="text-uppercase">Home</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#!">Link 1</a></li>
+                        <li><a href="#!">Link 2</a></li>
+                        <li><a href="#!">Link 3</a></li>
+                        <li><a href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <!-- Links Group 2 -->
+                    <h5 class="text-uppercase">About</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#!">Link 1</a></li>
+                        <li><a href="#!">Link 2</a></li>
+                        <li><a href="#!">Link 3</a></li>
+                        <li><a href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+            <a href="https://soajp.blogspot.com/"> SOAjp.blogspot.com</a>
+        </div>
+        {% endblock %}
+    </footer>
+    <!-- Footer -->
+</body>
+
+</html>

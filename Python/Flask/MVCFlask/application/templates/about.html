@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block head %}
+  {{ super() }}
+  <!-- Include custom header -->
+{% endblock %}
+{% block content %}
+<br>
+<div class="container">
+  <div class="about col-sm-6 offset-sm-3">
+      <img class="img-fluid mx-auto d-block" 
+           src="{{ url_for('static', filename='img/logo.png') }}"
+           alt="MVCFlask Logo"
+           width="128px">
+      <h1>ABOUT MVCFlask WebApp</h1>
+      <p>
+          This WebApp was made to demonstrate the functionality of the Flask
+          and the <strong>flask_login</strong> module.
+      </p>
+  </div>
+</div>
+{% endblock %}

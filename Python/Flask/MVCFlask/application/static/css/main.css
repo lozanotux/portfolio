@@ -1,0 +1,90 @@
+.blue {
+    background-color: #2196f3!important;
+}
+
+.margin-top-2 {
+    margin-top: 20vh!important;
+}
+
+.margin-top-3 {
+    margin-top: 30vh!important;
+}
+
+.margin-top-4 {
+    margin-top: 40vh!important;
+}
+
+.margin-bottom-1 {
+    margin-bottom: 10vh!important;
+}
+
+.margin-bottom-2 {
+    margin-bottom: 20vh!important;
+}
+
+.margin-bottom-3 {
+    margin-bottom: 30vh!important;
+}
+
+.margin-bottom-4 {
+    margin-bottom: 40vh!important;
+}
+
+.brand-title {
+    font-family: 'Francois One', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.8em;
+    font-weight: 400;
+}
+
+footer {
+    width: 100%;
+}
+
+footer .page-footer {
+    color: #fff!important;
+}
+
+footer .page-footer li a, footer .footer-copyright a  {
+    color: #fff!important;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer .footer-copyright {
+    overflow: hidden;
+    color: rgba(255,255,255,.6);
+    background-color: rgba(0,0,0,.2);
+}
+
+.welcome {
+    margin-top: 12vh!important;
+    margin-bottom: 18vh!important;
+}
+
+.welcome .title, .welcome .subtitle {
+    text-align: center;
+}
+
+.login-box {
+    border: 1px solid #d3d3d3;
+    border-radius: 8px;
+    padding: 24px 24px;
+    margin-top: 32!important;
+    margin-bottom: 32px!important;
+}
+
+.login-box .title {
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.about {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+.about img {
+    margin-bottom: 12px;
+    align-self: center;
+}
