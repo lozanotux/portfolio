@@ -104,3 +104,10 @@ cat text_file.txt | while read VARIABLE; do echo "$VARIABLE"; done
 ``` sh
 for i in *;do tr -d '\r' < $i > out/$i; chmod +x out/$i;done
 ```
+  
+  
+  
+**View level traffic for Apache access log, count by day:**
+``` sh
+awk '{print $4}' file_access_log.txt | cut -d: -f1 | uniq -c
+```
