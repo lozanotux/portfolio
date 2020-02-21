@@ -28,6 +28,7 @@ Repositorio que almacena trabajos e invetigaciones (configuraciones, clases Java
    8. FirstJersey: basic hello world jersey, basic structure
    9. FacadeFileObjectsMVC: facade pattern using MVC, Java Reflection and Serializable Objects
    10. JerseyClientForConsumeJSON: simple Jersey client to consume webservices with JSON
+   11. social-multiplication: Spring boot app for learn microservices
 5. Python:
    1. ABMUsuarios: Flask with SQLAlchemy + PostgreSQL persistence
    2. FUAL: Formulario Unico de Alumnos (Flask, SQLAlchemy, HTML Render, SQLite, etc)
