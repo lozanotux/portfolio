@@ -1,5 +1,18 @@
 # Linux Things
 
+## PS1 config for a generic look good prompt
+
+**For normal user (green & dollar):**
+``` sh
+export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
+```
+
+**For root user (red & hashtag):**
+``` sh
+export PS1='\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+```
+
+
 ## Common commands
 
 **How to know which JAR has certain class:**
