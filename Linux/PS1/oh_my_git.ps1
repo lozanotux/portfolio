@@ -2,12 +2,17 @@
 function parse_git_branch() {
         BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
         if [ ! "${BRANCH}" == "" ]
-        then
-                STAT=`parse_git_dirty`
-                echo " ⛕  ${BRANCH}${STAT} "
-        else
-                echo ""
-        fi
+	then
+		STAT=`parse_git_dirty`
+		if [ "${BRANCH}" == "master" ]
+		then
+			echo " ߐ  ${BRANCH}${STAT} "
+		else
+			echo " ߢ߉  ${BRANCH}${STAT} "
+		fi
+	else
+		echo ""
+	fi
 }
 
 # get current status of git repo
