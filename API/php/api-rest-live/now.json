@@ -1,0 +1,33 @@
+{
+    "version": 2,
+    "routes": [
+        {
+            "src": "/",
+            "dest": "index.html"
+        },
+        {
+            "src": "/(?<type>[^/]+)/(?<id>[^/]+)",
+            "dest": "server.php?resource_type=$type&resource_id=$id"
+        }
+        {
+            "src": "/(?<type>[^/]+)(/)*",
+            "dest": "server.php?resource_type=$type"
+        }
+        {
+            "src": "/(.*)",
+            "dest": "server.php",
+            "status": 404
+        }
+    ],
+    "name": "api-rest-live",
+    "builds": [
+        {
+            "src": "*.php",
+            "use": "@now/php"
+        },
+        {
+            "src": "*.html",
+            "use": "@now/static"
+        }
+    ]
+}
