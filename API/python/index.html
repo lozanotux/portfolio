@@ -1,0 +1,107 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>API-REST-LIVE</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <h1>API-REST-LIVE</h1>
+    <table id="booksTable" class="table">
+        <thead>
+            <tr>
+                <td>Titulo</td>
+                <td>ID Autor</td>
+                <td>ID Genero</td>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+        <input type="button" value="Cargar Libros" id="loadBooks" class="btn btn-outline-primary">
+        <div style="display: none;" id="messages">
+            <p></p>
+        </div>
+        <div style="display: none;" id="bookForm">
+            <hr />
+            <table>
+                <tr>
+                    <td>Titulo:</td>
+                    <td>
+                        <input type="text" name="bookTitle" id="bookTitle" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>ID Autor:</td>
+                    <td>
+                        <input type="text" name="bookAuthor" id="bookAuthor" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>ID Genero:</td>
+                    <td>
+                        <input type="text" name="bookGenre" id="bookGenre" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" value="Guardar" id="bookSave" class="btn btn-outline-primary" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script
+  src="http://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script>
+    $('#loadBooks').click( function() {
+        $('#messages').first('p').text('Cargando libros...');
+        $('#messages').show();
+        $.ajax(
+            {
+                url: 'http://localhost:5000/books',
+                success: function( data ) {
+                    $('#messages').hide();
+                    $('#booksTable > tbody').empty();
+                    for (book in data) {
+                        addBook( data[book] );
+                    }
+                    $('#bookForm').show();
+                }
+            }
+        );
+    } );
+
+    function addBook( book ) {
+        $('#booksTable tr:last').after('<tr><td>' + book.titulo + '</td><td>' + book.id_autor + '</td><td>' + book.id_genero + '</td></tr>');
+    }
+
+    $('#bookSave').click( function() {
+        var newBook = {
+            'titulo': $('#bookTitle').val(),
+            'id_autor': $('#bookAuthor').val(),
+            'id_genero': $('#bookGenre').val()
+        }
+
+        $('#messages').first('p').text('Guardando libro...');
+        $('#messages').show();
+
+        $.ajax(
+            {
+                'url': 'http://localhost:5000/books',
+                'method': 'POST',
+                'data': JSON.stringify( newBook ),
+                'success': function(data) {
+                    $('#messages').hide();
+                    addBook( newBook );
+                },
+                'error': function (request, status, error) {
+                    console.log('Error: [' + error + ']');
+                }
+            }
+        );
+    });
+
+</script>
+</body>
+</html>
