@@ -41,7 +41,6 @@ Repositorio que almacena trabajos e invetigaciones (configuraciones, clases Java
 7. SQL
    1. Oracle
       1. StoreProcedureTemplate
-
 8. Linux
    1. Configuraciones
    2. PS1 (folder with awesome PS1 prompts)
@@ -56,6 +55,10 @@ Repositorio que almacena trabajos e invetigaciones (configuraciones, clases Java
          1. airflowctl.sh: administration script to start, stop and restart Apache Airflow.
    6. Themes
       1. Red Hat 8.1 Theme Pack (Boston University Red Color: #CC0000)
-
-   
-9. Wallpapers
+9. DevOps
+   1. Ansible
+      1. workshop (playbooks and exercises)
+   2. Examples
+      1. jenkins-docker (Node.js app dockerized and automated with Jenkins in CI/CD pipelines)
+      2. node-service (Node.js app automated with Circle CI and DigitalOcean using Terraform)
+10. Wallpapers

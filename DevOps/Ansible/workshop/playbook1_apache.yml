@@ -1,0 +1,18 @@
+---
+- name: Apache Server Installed
+  hosts: web
+  become: yes
+  tasks:
+  - name: Latest Apache version installed
+    yum:
+      name: httpd
+      state: latest
+  - name: Apache enabled and running
+    service:
+      name: httpd
+      enabled: true
+      state: started
+  - name: Copy web.html
+    copy:
+      src: files/web.html
+      dest: /var/www/html/index.html

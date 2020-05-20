@@ -1,0 +1,27 @@
+{
+    "__comment": "packer.io template",
+    "variables": {
+        "build_number": "{{env `CIRCLE_BUILD_NUM`}}"
+    },
+    "builders": [
+        {
+            "type": "digitalocean",
+            "image": "coreos-stable",
+            "region": "nyc3",
+            "size": "512mb",
+            "snapshot_name": "node-service-{{user `build_number`}}",
+            "ssh_username": "core"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "inline": [
+                "git clone https://github.com/<user_name>/<project_name>",
+                "cd <project_name>",
+                "docker build -t node-service .",
+                "docker run -d -p 3000:3000 node-service"
+            ]
+        }
+    ]
+}

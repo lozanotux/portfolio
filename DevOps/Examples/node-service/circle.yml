@@ -1,0 +1,93 @@
+# CircleCI 2.1 configuration file for Node.js
+# author: lozanotux
+# version: 1.1
+# modified date: 12 May 2020
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version of Node.js you desire here
+      - image: circleci/node:12.16.3
+    working_directory: ~/app
+    steps:
+      # Steps for building/testing app
+      - setup_remote_docker
+
+      - checkout
+
+      - run: docker build -t nodeservice .
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+      - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      # run tests!
+      - run: yarn test}
+
+  deploy-qa:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:12.16.3
+    working_directory: ~/app
+    steps:
+      - checkout
+      - run:
+          name: deploy to qa
+          command:  sh deployments/qa.sh
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+  deploy-prod:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:12.16.3
+    working_directory: ~/app
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints: 
+            -"30:4e:38:ac:c6:f7:93:6c:af:ee:22:09:16:a8:68:64"
+      - run:
+          name: deploy to prod
+          command: sh deployments/prod.sh
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+workflows:
+  version: 2
+  central_flow:
+      jobs:
+        - build
+        - deploy-qa:
+            requires:
+              - build
+            filters:
+              branches:
+                only: /feature_.*/
+        - deploy-prod:
+            requires:
+              - build
+            filters:
+              branches:
+                only: master

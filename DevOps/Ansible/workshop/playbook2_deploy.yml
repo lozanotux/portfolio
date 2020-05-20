@@ -1,0 +1,9 @@
+---
+- name: Copy Web HTML file
+  hosts: web
+  become: yes
+  tasks:
+  - name: copy frontend HTML file
+    copy:
+      src: "{{ stage }}_web.html"
+      dest: /var/www/html/index.html

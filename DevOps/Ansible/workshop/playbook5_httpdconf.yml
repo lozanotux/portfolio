@@ -1,0 +1,16 @@
+---
+- name: Manage httpd.conf
+  hosts: web
+  become: yes
+  tasks:
+  - name: Copy new Apache Configuration file
+    copy:
+      src: files/httpd.conf
+      dest: /etc/httpd/conf/
+    notify:
+      - restart_apache
+  handlers:
+  - name: restart_apache
+    service:
+      name: httpd
+      state: restarted

@@ -1,0 +1,10 @@
+---
+- name: Install vsftp on ftpservers
+  hosts: all
+  become: yes
+  tasks:
+  - name: Install FTP server when host in ftpserver group
+    yum:
+      name: vsftp
+      state: latest
+    when: inventory_hostname in groups["ftpserver"]
