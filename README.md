@@ -62,6 +62,6 @@ Repositorio que almacena trabajos e invetigaciones (configuraciones, clases Java
       1. jenkins-docker (Node.js app dockerized and automated with Jenkins in CI/CD pipelines)
       2. node-service (Node.js app automated with Circle CI and DigitalOcean using Terraform)
 10. Docker
-   1. Dockerfiles
-      1. Multi-Stage_Java8
+    1. Dockerfiles
+       1. Multi-Stage_Java8
 11. Wallpapers
