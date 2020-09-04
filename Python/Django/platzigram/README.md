@@ -15,7 +15,7 @@ This project is a basic Django app to learn the basis. It's a clone of Instagram
 
 ## Screenshot
 
-![alt text](url)
+![platzigram_screenshot](https://raw.githubusercontent.com/lozanotux/portfolio/master/Python/Django/platzigram/images/screenshot.png)
 
 ### Deploy And Execution (Development Environment)
 
@@ -64,7 +64,7 @@ $ .env\Scripts\activate
 
 In both environment I have decided to establish the following architecture:
 
-![alt text](url)
+![deployment_architecture](https://raw.githubusercontent.com/lozanotux/portfolio/master/Python/Django/platzigram/images/infra_prod.jpg)
 
 ### Another Considerations
 
