@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block head_content %}
+<title>Platzigram</title>
+{% endblock %}
+
+<!DOCTYPE html>
+{% block container %}
+<div class="container">
+    <div class="row">
+        {% include 'posts/post_card.html' %}
+    </div>
+</div>
+{% endblock %}

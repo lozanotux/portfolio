@@ -1,0 +1,34 @@
+{% extends "users/base.html" %}
+{% load static %}
+
+{% block head_content %}
+<title>Platzigram Sign in</title>
+{% endblock %}
+
+{% block container %}
+<div class="row justify-content-md-center">
+    <img class="mb-4 mt-2" src="{% static 'img/logo.png' %}">
+</div>
+
+{% if form.errors %}
+<p class="alert alert-danger">
+    Your username and password didn't match. Please try again.
+</p>
+{% endif %}
+
+<form method="POST" action="{% url 'users:login' %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Enter your Username" name="username" />
+    </div>
+    
+    <div class="form-group">
+        <input class="form-control" type="password" placeholder="Enter your Password" name="password">
+    </div>
+
+    <button class="btn btn-primary btn-block mt-5" type="submit">Sign in!</button>
+</form>
+
+<p class="mt-4">Don't have an account yet? <a href="{% url 'users:signup' %}">Sign up here.</a></p>
+
+{% endblock %}

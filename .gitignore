@@ -1,5 +1,7 @@
 /venv/
+.env/
 .idea/
 .vscode/
 __pycache*
 .DS_Store*
+platzigram/media/*
