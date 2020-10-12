@@ -1,0 +1,7 @@
+<root>
+	<element>One</element>
+	<properties>
+		<attribute name="size">10</attribute>
+		<attribute name="type">message</attribute>
+	</properties>
+</root>
