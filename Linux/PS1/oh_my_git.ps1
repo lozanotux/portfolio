@@ -6,9 +6,9 @@ function parse_git_branch() {
 		STAT=`parse_git_dirty`
 		if [ "${BRANCH}" == "master" ]
 		then
-			echo " ߐ  ${BRANCH}${STAT} "
+			echo " ⚲  ${BRANCH}${STAT} "
 		else
-			echo " ߢ߉  ${BRANCH}${STAT} "
+			echo " ⎇  ${BRANCH}${STAT} "
 		fi
 	else
 		echo ""
