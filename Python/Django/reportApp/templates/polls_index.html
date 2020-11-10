@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polls&Reports</title>
+    <style>
+        .btn-download {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+            transition: none;
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            vertical-align: middle;
+            user-select: none;
+            border: 1px solid transparent;
+            border-bottom: 3px solid #18792f;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            text-decoration: none;
+        }
+        .btn-download:hover {
+            text-decoration: none;
+            background-color: #25c94b;
+            border-color: #16be3e;
+            border-bottom: 3px solid #13a134;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World, You're at the polls index.</h1>
+    <a href="{% url 'polls:report' %}" class="btn-download">Download PDF Report</a>
+</body>
+</html>

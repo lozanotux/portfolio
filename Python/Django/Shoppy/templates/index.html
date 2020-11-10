@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<meta charset="utf-8">
+	<title>Hello World</title>
+	<link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+	<link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+	<link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+	<h1>Hola</h1>
+	<a href="{% url 'new_product' %}" class="btn-primary">Add Product</a>
+	<ul>
+		{% for pr in products %}
+			<li>
+				<a href="{% url 'product_detail' pk=pr.pk %}">{{ pr.name }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+</body>
+</html>

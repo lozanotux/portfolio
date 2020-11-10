@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<title>Login</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+	<link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+	<link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body style="background-color: #A0A0A0;">
+
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	  <!-- Brand/logo -->
+	  <a class="navbar-brand" href="#">
+	  	<i class='fas fa-shopping-cart'></i>
+	  	<strong>Shoppy</strong>
+	  </a>
+	  
+	  <!-- Links -->
+	  <ul class="navbar-nav  ml-auto">
+	    <li class="nav-item login-box">
+	      <b class="nav-title">
+	      	<i class='fas fa-user-alt'></i>
+	      	Login:
+	      </b>
+	      <form action="" method="POST">
+	      	{% csrf_token %}
+	      	<input type="hidden" name="action" value="login">
+
+	      	<input type="text" name="username" placeholder="Username">
+	      	<input type="password" name="password" placeholder="Password">
+
+	      	<button type="submit" class="btn btn-primary btn-sm btn-sm-fixed">Iniciar</button>
+	      </form>
+	    </li>
+	  </ul>
+	</nav>
+
+	<div class="container">
+		<div class="signup-box ml-auto">
+			<h2>Signup</h2>
+			<form action="" method="POST">
+				{% csrf_token %}
+				<input type="hidden" name="action" value="signup">
+
+				<div class="form-group">
+					<label>Username:</label>
+			      	<input type="text" name="username" placeholder="Enter your desired username" class="form-control">
+		      	</div>
+		      	<div class="form-group">
+			      	<label>Password:</label>
+			      	<input type="password" name="password" placeholder="Enter your secure password" class="form-control">
+			    </div>
+
+		      	<button type="submit" class="btn btn-primary btn-block">Crear Usuario</button>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>

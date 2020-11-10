@@ -1,0 +1,9 @@
+<form method="post">
+    {% csrf_token %}
+    
+    ¿Estás seguro que deseas borrar el curso "{{ object }}"?
+    <p>
+		<a href="{% url 'courses:list' %}">Regresar</a>
+	</p>
+    <input type="submit" value="Submit" />
+</form>

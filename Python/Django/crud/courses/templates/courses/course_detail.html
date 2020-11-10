@@ -1,0 +1,6 @@
+<h1>{{ course.name }}</h1>
+<p>Fecha de inicio: <i>{{ course.start_date }}</i></p>
+<p>Fecha de fin: <i>{{ course.end_date }}</i></p>
+<p>
+    <a href="{% url "courses:list" %}">Regresar</a>
+</p>

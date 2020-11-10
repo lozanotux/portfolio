@@ -1,0 +1,45 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		{% load static %}
+		<meta charset="utf-8">
+		<title>{{ product.name }}</title>
+		<link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+		<link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+		<link rel="stylesheet" href="{% static 'css/base.css' %}">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	</head>
+	<body>
+		<div class="container">
+			<br>
+			<h1>Producto:</h1>
+			<br>
+			<div class="card" style="width:300px">
+		    	<img class="card-img-top" src="{{ product.image.url }}" style="width:100%">
+		    	<div class="card-body">
+		      		<h4 class="card-title">{{ product.name }}</h4>
+		      		<h5>{{ product.category }}</h5>
+		      		<hr>
+		      		<p class="card-text">{{ product.description }}</p>
+		      		<div class="price-box">
+			      		<b class="price">$ {{ product.price }}</b>	
+		      		</div>
+		    	</div>
+		  	</div>
+		</div>
+	<script type="text/javascript">
+		var parseCurrency = function(num) {
+			const options = { 
+		     	minimumFractionDigits: 2,
+		    	maximumFractionDigits: 2 
+		    };
+    		return Number(num).toLocaleString('en', options);
+		};
+
+		window.onload = function() {
+		 	var price = document.getElementsByClassName("price");
+		 	price[0].innerHTML = '$ ' + parseCurrency(price[0].innerHTML.substring(2))
+		};
+	</script>
+	</body>
+	</html>
