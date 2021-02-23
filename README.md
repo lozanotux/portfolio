@@ -69,6 +69,7 @@ Repository that stores investigations (for example: manifests, configurations, J
 8. DevOps
    * Ansible
       * workshop (playbooks and exercises)
+   * Elasticsearch (exercises and examples)
    * Examples
       * jenkins-docker (Node.js app dockerized and automated with Jenkins in CI/CD pipelines)
       * node-service (Node.js app automated with Circle CI and DigitalOcean using Terraform)
