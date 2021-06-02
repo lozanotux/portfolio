@@ -49,6 +49,8 @@ Repository that stores investigations (for example: manifests, configurations, J
 	  * [APIdemo](./Python/Scripts/apidemo.py): demo of how to consume an API using python
 	  * [HanoiTowers](./Python/Scripts/hanoi.py): solve hanoi towers game using python
 	  * [UseJSON](./Python/Scripts/use_json.py): how to use python's json module, and manipulate the data structure
+   * OpenCV
+      * [HandTracking](./Python/OpenCV/HandTracking): use mediapipe and opencv to track our hands
 6. SQL
    * Oracle
       * StoreProcedureTemplate
