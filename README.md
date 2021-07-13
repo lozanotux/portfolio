@@ -18,18 +18,24 @@ Repository that stores investigations (for example: manifests, configurations, J
 	  * [exploreCloserLook](./Ionic/UdemyCourse/exploreCloserLook): a simple gestures (tap, press, slide) app
 	  * [recipeBook](./Ionic/UdemyCourse/recipeBook): app for save recipes and lists with ingredients
 4. Java:
-   * [XMLtoZippedFIlesBase64](./Java/XMLtoZippedFIlesBase64): Module for Create a ZIP File with XML or CSV Files within and return Base64 of ZIP
-   * [OSBMemoryReferenceToString](./Java/OSBMemoryReferenceToString): Read OSB memory reference and parse it to String
-   * [Base64Translator](./Java/Base64Translator): Converts Any to Base64 and Decode Base64 to Any
-   * [ClientSOAP](./Java/ClientSOAP): client to consume SOAP webservices using XML
-   * [UploadToHRServer](./Java/UploadToHRServer): upload a file to Oracle HR Server
-   * [PoCApacheLDAP](./Java/PoCApacheLDAP): query LDAP and read ZIP file to create CSV File list (opaque list)
-   * [ConsumeRestPoC](./Java/ConsumeRestPoC): simple poc for consume rest service
-   * [FirstJersey](./Java/FirstJersey): basic 'Hello World' with Jersey, basic structure
-   * [FacadeFileObjectsMVC](./Java/FacadeFileObjectsMVC): facade pattern using MVC, Java Reflection and Serializable Objects
-   * [JerseyClientForConsumeJSON](./Java/JerseyClientForConsumeJSON): simple Jersey client to consume webservices through JSON
-   * [social-multiplication](./Java/social-multiplication): Spring boot app for learn microservices
-   * [camelinaction-learn](./Java/camelinaction-learn): Apache Camel learn, PoCs and Test cases
+   * Projects
+      * [XMLtoZippedFIlesBase64](./Java/Projects/XMLtoZippedFIlesBase64): Module for Create a ZIP File with XML or CSV Files within and return Base64 of ZIP
+      * [OSBMemoryReferenceToString](./Java/Projects/OSBMemoryReferenceToString): Read OSB memory reference and parse it to String
+      * [Base64Translator](./Java/Projects/Base64Translator): Converts Any to Base64 and Decode Base64 to Any
+      * [ClientSOAP](./Java/Projects/ClientSOAP): client to consume SOAP webservices using XML
+      * [UploadToHRServer](./Java/Projects/UploadToHRServer): upload a file to Oracle HR Server
+      * [PoCApacheLDAP](./Java/Projects/PoCApacheLDAP): query LDAP and read ZIP file to create CSV File list (opaque list)
+      * [ConsumeRestPoC](./Java/Projects/ConsumeRestPoC): simple poc for consume rest service
+      * [FacadeFileObjectsMVC](./Java/Projects/FacadeFileObjectsMVC): facade pattern using MVC, Java Reflection and Serializable Objects
+   * Spring Boot
+      * [social-multiplication](./Java/SpringBoot/social-multiplication): Spring boot app for learn microservices
+   * Jersey
+      * [FirstJersey](./Java/Jersey/FirstJersey): basic 'Hello World' with Jersey, basic structure
+      * [JerseyClientForConsumeJSON](./Java/Jersey/JerseyClientForConsumeJSON): simple Jersey client to consume webservices through JSON
+   * Frameworks
+      * [camelinaction-learn](./Java/Frameworks/camelinaction-learn): Apache Camel learn, PoCs and Test cases
+   * Test
+      * [karate](./Java/Test/karate): Karate, unified framework to API test-automation, mocks, performance testing and even UI.
 5. Python:
    * Flask
       * [ABMUsuarios](./Python/Flask/ABMUsuarios): Flask with SQLAlchemy + PostgreSQL persistence
