@@ -29,6 +29,7 @@ Repository that stores investigations (for example: manifests, configurations, J
       * [FacadeFileObjectsMVC](./Java/Projects/FacadeFileObjectsMVC): facade pattern using MVC, Java Reflection and Serializable Objects
    * Spring Boot
       * [social-multiplication](./Java/SpringBoot/social-multiplication): Spring boot app for learn microservices
+      * [spring-cloud](https://github.com/lozanotux/spring-cloud): Spring Framework Cloud projects example (hystrix, netflix-eureka, sleuth, gateway, config). 
    * Jersey
       * [FirstJersey](./Java/Jersey/FirstJersey): basic 'Hello World' with Jersey, basic structure
       * [JerseyClientForConsumeJSON](./Java/Jersey/JerseyClientForConsumeJSON): simple Jersey client to consume webservices through JSON
