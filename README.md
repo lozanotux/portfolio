@@ -37,6 +37,8 @@ Repository that stores investigations (for example: manifests, configurations, J
       * [camelinaction-learn](./Java/Frameworks/camelinaction-learn): Apache Camel learn, PoCs and Test cases
    * Test
       * [karate](./Java/Test/karate): Karate, unified framework to API test-automation, mocks, performance testing and even UI.
+   * Quarkus:
+      * [greeting](./Java/Quarkus/greeting): example app that show a greeting message based in the content of an openshift secret.
 5. Python:
    * Flask
       * [ABMUsuarios](./Python/Flask/ABMUsuarios): Flask with SQLAlchemy + PostgreSQL persistence
