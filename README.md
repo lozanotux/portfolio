@@ -12,6 +12,8 @@ Repository that stores investigations (for example: manifests, configurations, J
       * [api-rest-live](./API/php/api-rest-live): simple API with CRUD and Client web page to consume it with AJAX
    * Python
       * [api-rest-live](./API/python): simple API with CRUD and Client web page to consume it with AJAX
+3. BASH:
+   * clean_dot-git_repository_extension.sh: remove the last ".git" extension from git repository URL if exist.
 3. Ionic:
    * Course "Build iOS, Android & Web Apps with Ionic & Angular"
       * [fauvoriteQuoteApp](./Ionic/UdemyCourse/fauvoriteQuoteApp): mark quotes as favorite
