@@ -2,7 +2,7 @@
 Repository that stores investigations (for example: manifests, configurations, Java classes, among other programming languages such as Python, PL/SQL, etc).
 
 
-## CONTENIDO:
+## CONTENT:
 
 1. VIM Configs:
    * Standar Enhanced
