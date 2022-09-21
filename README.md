@@ -41,6 +41,7 @@ Repository that stores investigations (for example: manifests, configurations, J
       * [karate](./Java/Test/karate): Karate, unified framework to API test-automation, mocks, performance testing and even UI.
    * Quarkus:
       * [greeting](./Java/Quarkus/greeting): example app that show a greeting message based in the content of an openshift secret.
+      * [opentracing-basis](./Java/Quarkus/opentracing-basis): example of opentracing using jaeger to trace a REST API request.
 6. Python:
    * Flask
       * [ABMUsuarios](./Python/Flask/ABMUsuarios): Flask with SQLAlchemy + PostgreSQL persistence
