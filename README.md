@@ -42,6 +42,7 @@ Repository that stores investigations (for example: manifests, configurations, J
    * Quarkus:
       * [greeting](./Java/Quarkus/greeting): example app that show a greeting message based in the content of an openshift secret.
       * [opentracing-basis](./Java/Quarkus/opentracing-basis): example of opentracing using jaeger to trace a REST API request.
+      * [quarkus-fault-tolerance](./Java/Quarkus/quarkus-fault-tolerance): example of fault tolerance methods (Retry, CircuitBreaker, etc).
 6. Python:
    * Flask
       * [ABMUsuarios](./Python/Flask/ABMUsuarios): Flask with SQLAlchemy + PostgreSQL persistence
