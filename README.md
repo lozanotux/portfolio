@@ -64,6 +64,9 @@ Repository that stores investigations (for example: manifests, configurations, J
 	  * [UseJSON](./Python/Scripts/use_json.py): how to use python's json module, and manipulate the data structure
    * OpenCV
       * [HandTracking](./Python/OpenCV/HandTracking): use mediapipe and opencv to track our hands
+7. JavaScript
+   * Node.js
+      * [Mokepon](./JavaScript/Nodejs/mokepon): video game to learn some programming concepts in Node.js
 7. SQL
    * Oracle
       * StoreProcedureTemplate
