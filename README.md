@@ -67,6 +67,7 @@ Repository that stores investigations (for example: manifests, configurations, J
 7. JavaScript
    * Node.js
       * [Mokepon](./JavaScript/Nodejs/mokepon): video game to learn some programming concepts in Node.js
+      * [express-demo-api](./JavaScript/Nodejs/express-demo): a sample express-demo API to practice CRUD with Node.js
 7. SQL
    * Oracle
       * StoreProcedureTemplate
