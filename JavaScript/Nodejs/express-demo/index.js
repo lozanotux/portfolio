@@ -48,12 +48,6 @@ app.get('/api/courses/:id', (req, res) => {
     res.send(course);
 });
 
-// env var called PORT
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
-});
-
 app.put('/api/courses/:id', (req, res) => {
     const course = courses.find(c => c.id === parseInt(req.params.id));
 
@@ -96,3 +90,9 @@ function validateCourse(course) {
 
     return Joi.validate(course, schema);
 }
+
+// env var called PORT
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Listening on port ${port}`);
+});
