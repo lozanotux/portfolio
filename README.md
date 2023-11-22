@@ -30,6 +30,7 @@ Repository that stores investigations (for example: manifests, configurations, J
       * [ConsumeRestPoC](./Java/Projects/ConsumeRestPoC): simple poc for consume rest service
       * [FacadeFileObjectsMVC](./Java/Projects/FacadeFileObjectsMVC): facade pattern using MVC, Java Reflection and Serializable Objects
    * Spring Boot
+      * [api-demo](./Java/SpringBoot/api-demo): An example API demo for manage Users in database PostgreSQL
       * [social-multiplication](./Java/SpringBoot/social-multiplication): Spring boot app for learn microservices
       * [spring-cloud](https://github.com/lozanotux/spring-cloud): Spring Framework Cloud projects example (hystrix, netflix-eureka, sleuth, gateway, config). 
    * Jersey
