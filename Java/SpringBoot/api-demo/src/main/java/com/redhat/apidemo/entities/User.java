@@ -1,7 +1,14 @@
 package com.redhat.apidemo.entities;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
+/*
+ * Spring Data JDBC uses a NamingStrategy to map an entity name to a table name.
+ * By converting the entities class name. However, you can specify the table name
+ * using @Table annotation.
+ * */
+@Table("user")
 public class User {
 
     @Id
