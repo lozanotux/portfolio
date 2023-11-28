@@ -4,5 +4,5 @@ mediapipe==0.8.4.2
 numpy==1.21.0
 opencv-contrib-python==4.5.2.52
 opencv-python==4.5.2.52
-protobuf==3.17.1
+protobuf==3.18.3
 six==1.16.0
