@@ -124,3 +124,8 @@ for i in *;do tr -d '\r' < $i > out/$i; chmod +x out/$i;done
 ``` sh
 awk '{print $4}' file_access_log.txt | cut -d: -f1 | uniq -c
 ```
+
+**Find a matches of a TEXT in all files and subdirectories (including hidden files that it's name start with a dot) and print the filename and linea number in which the match appears:**
+``` sh
+grep -irn 'TEXT' * .[^.]*
+```
