@@ -58,8 +58,10 @@ Repository that stores investigations (for example: manifests, configurations, J
 	  * [ReportApp](./Python/Django/reportApp): application to generate reports in PDF format
 	  * [CRUD](./Python/Django/crud): dummy app for testing the most common Class-based views
 	  * [DuckAPI](./Python/Django/DuckAPI): django application to make a PoC of the library "Django REST framework"
+   * Gitlab API
+     * [Search](./Python/Gitlab-API/search.py): powerful script to make queries in all gitlab projects and search occurrences
    * Scripts
-      * [Anonletter](./Python/Scripts/anon_letter.py): receives a magazine and determines if it is capable of assembling the letter with the characters contained in it
+     * [Anonletter](./Python/Scripts/anon_letter.py): receives a magazine and determines if it is capable of assembling the letter with the characters contained in it
 	  * [APIdemo](./Python/Scripts/apidemo.py): demo of how to consume an API using python
 	  * [HanoiTowers](./Python/Scripts/hanoi.py): solve hanoi towers game using python
 	  * [UseJSON](./Python/Scripts/use_json.py): how to use python's json module, and manipulate the data structure
